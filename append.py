@@ -1,9 +1,16 @@
-choose_from_three = ['A', 'B', 'C']
+class UppercaseError(Exception):
+	pass
 
-ans = []
 
-choose_from_three.append('A')
-choose_from_three.append('C')
+def check():
+	words = ['APPLE', 'banana', 'orange']
+	for word in words:
+		if word.isupper():
+			raise UppercaseError(word)
 
-print(choose_from_three)
+
+try:
+	check()
+except UppercaseError as ex:
+	print("Don't worry")
 
